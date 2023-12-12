@@ -7,10 +7,8 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class HeroService {
-
   constructor(private httpClient: HttpClient) { }
-
   getHeroes() : Observable<Hero[]> {
-    return of([]);
+    return this.httpClient.get<Hero[]>('');
   }
 }
